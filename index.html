@@ -32,7 +32,7 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 
 /* ── HERO ── */
 .hero{
-  min-height:100vh;
+  min-height:90vh;
   background:linear-gradient(135deg,#1A1A2E 0%,#16213E 40%,#0F3460 100%);
   display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;
   padding:80px;position:relative;overflow:hidden;
@@ -67,13 +67,11 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 }
 .hero-title{
   font-size:17px;color:rgba(255,255,255,0.6);
-  margin-bottom:36px;max-width:500px;line-height:1.8;
+  margin-bottom:24px;max-width:500px;line-height:1.8;
 }
 .hero-summary{
   font-size:15px;color:rgba(255,255,255,0.75);
-  max-width:520px;line-height:1.9;margin-bottom:40px;
-  padding:24px;background:rgba(0,200,150,0.05);
-  border:1px solid rgba(0,200,150,0.15);border-radius:16px;
+  max-width:650px;line-height:1.9;margin-bottom:40px;
 }
 
 /* PHOTO */
@@ -89,7 +87,7 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 /* ── STATS BAR ── */
 .stats-bar{
   background:linear-gradient(90deg,#0F3460,#1A1A2E);
-  padding:0 80px;display:grid;grid-template-columns:repeat(5,1fr);
+  padding:0 80px;display:grid;grid-template-columns:repeat(3,1fr);
   border-top:1px solid rgba(0,200,150,0.2);border-bottom:1px solid rgba(0,200,150,0.2);
 }
 .stat-item{text-align:center;padding:28px 16px;border-right:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden}
@@ -144,17 +142,9 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
   color:var(--emerald);padding:7px 16px;border-radius:100px;display:inline-block;margin-bottom:4px;
 }
 .exp-location{font-size:12px;color:var(--muted);text-align:right}
-.impact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
-.impact-box{
-  background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(255,215,0,0.04));
-  border:1px solid rgba(0,200,150,0.15);border-radius:12px;padding:16px;text-align:center;
-}
-.impact-num{
-  font-family:'Playfair Display',serif;font-size:26px;font-weight:700;display:block;line-height:1;
-  background:linear-gradient(135deg,var(--emerald),var(--gold));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
-.impact-desc{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-top:4px}
+.metric-list{display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,0.02);border:1px dashed rgba(0,200,150,0.2);border-radius:12px;padding:18px;margin-bottom:20px}
+.metric-item{font-size:14px;color:var(--gold-soft);font-weight:600;display:flex;align-items:center;gap:10px}
+.metric-dot{width:6px;height:6px;border-radius:50%;background:var(--emerald)}
 .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:10px}
 .exp-bullets li{font-size:14px;color:rgba(255,255,255,0.65);padding-left:20px;position:relative;line-height:1.7}
 .exp-bullets li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:1px;background:linear-gradient(90deg,var(--emerald),var(--gold))}
@@ -170,29 +160,29 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 }
 .skill-tag:hover{background:rgba(0,200,150,0.1);border-color:var(--emerald);color:var(--emerald)}
 
-/* ── EDUCATION ── */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px}
+/* ── DETACHED SECTIONS ── */
+.grid-two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+
+/* ── EDUCATION & CERTIFICATIONS ── */
+.edu-list, .cert-list-vertical {display:flex;flex-direction:column;gap:16px}
 .edu-card{
   background:linear-gradient(135deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
-  border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;position:relative;overflow:hidden;
 }
 .edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--emerald),var(--gold))}
-.edu-icon{font-size:28px;margin-bottom:12px}
 .edu-degree{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px}
 .edu-school{font-size:14px;color:var(--muted);margin-bottom:4px}
 .edu-year{font-size:12px;color:var(--emerald);font-weight:600}
 
-/* CERTIFICATIONS */
-.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.cert-card{
+.cert-card-v{
   background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
-  border-radius:12px;padding:18px;display:flex;gap:12px;align-items:flex-start;
+  border-radius:12px;padding:16px;display:flex;gap:14px;align-items:center;
   transition:all 0.2s;
 }
-.cert-card:hover{background:rgba(0,200,150,0.05);border-color:rgba(0,200,150,0.2)}
-.cert-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--emerald),var(--gold));margin-top:5px;flex-shrink:0}
-.cert-name{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
-.cert-issuer{font-size:11px;color:var(--muted);margin-top:3px}
+.cert-card-v:hover{background:rgba(0,200,150,0.05);border-color:rgba(0,200,150,0.2)}
+.cert-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--emerald),var(--gold));flex-shrink:0}
+.cert-name{font-size:14px;font-weight:600;color:var(--text)}
+.cert-issuer{font-size:12px;color:var(--muted);margin-left:auto}
 
 /* ── ACHIEVEMENTS ── */
 .ach-bg{
@@ -204,7 +194,6 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
   background:radial-gradient(circle,rgba(255,215,0,0.06) 0%,transparent 65%);pointer-events:none;
 }
 .ach-inner{max-width:1200px;margin:0 auto;padding:0 80px}
-.ach-inner .sec-title{color:var(--white)}
 .awards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:28px}
 .award-card{
   background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
@@ -260,10 +249,10 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 .footer-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,200,150,0.4)}
 
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr;padding:40px 24px}.hero-photo{display:none}
-  .stats-bar{grid-template-columns:repeat(2,1fr);padding:0 24px}.stat-item{border:none}
+  .hero{grid-template-columns:1fr;padding:40px 24px}.hero-photo{margin:0 auto}
+  .stats-bar{grid-template-columns:1fr;padding:0 24px}.stat-item{border:none}
   .section{padding:48px 24px}.ach-inner{padding:0 24px}.footer{padding:48px 24px}
-  .skills-layout,.edu-grid,.cert-grid,.awards-row,.projects-row,.impact-row{grid-template-columns:1fr}
+  .skills-layout,.grid-two-col,.awards-row,.projects-row{grid-template-columns:1fr}
   .exp-header{flex-direction:column}.exp-location{text-align:left}
 }
 </style>
@@ -277,12 +266,12 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
     <h1 class="hero-name">Vivek<br>Murdhani</h1>
     <p class="hero-title">Trust & Safety · KYC & Identity Verification · Fraud Detection</p>
     <div class="hero-summary">
-      I am a highly motivated Trust & Safety and KYC Operations Specialist with a proven track record in identity verification, fraud detection, and content moderation at Meta and Google scale. With expertise in document verification, policy enforcement, escalation handling, and team training, I bring precision, consistency, and results-driven processes to every role — maintaining 98%+ accuracy across high-volume environments and building operational tools used by 200+ reviewers globally.
+      I am a highly motivated Trust & Safety and KYC Operations Specialist with a proven track record in identity verification, fraud detection, and content moderation at Meta and Google scale. With expertise in document verification, policy enforcement, escalation handling, and team training, I bring precision, consistency, and results-driven processes to every role — maintaining high accuracy across high-volume environments and building operational tools used by 200+ reviewers globally.
     </div>
   </div>
   <div class="hero-photo">
     <div class="photo-wrap">
-      <img src="data:image/jpeg;base64,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" alt="Vivek Murdhani">
+      <img src="profile.jpg" alt="Vivek Murdhani">
       <div class="photo-glow"></div>
     </div>
   </div>
@@ -291,10 +280,8 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-item"><span class="stat-num">6+</span><span class="stat-label">Years Experience</span></div>
-  <div class="stat-item"><span class="stat-num">98%</span><span class="stat-label">Accuracy Rate</span></div>
-  <div class="stat-item"><span class="stat-num">200+</span><span class="stat-label">Reviewers Supported</span></div>
-  <div class="stat-item"><span class="stat-num">110–120</span><span class="stat-label">IDs Verified Daily</span></div>
   <div class="stat-item"><span class="stat-num">3×</span><span class="stat-label">Bravo Award Winner</span></div>
+  <div class="stat-item"><span class="stat-num">2×</span><span class="stat-label">Pat On Back Winner</span></div>
 </div>
 
 <!-- EXPERIENCE -->
@@ -303,6 +290,8 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
   <p class="sec-label">✦ Career Journey</p>
   <h2 class="sec-title">Work Experience</h2>
   <div class="exp-wrap">
+    
+    <!-- Genpact -->
     <div class="exp-card">
       <div class="exp-header">
         <div>
@@ -314,32 +303,34 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
           <div class="exp-location">Hyderabad, India</div>
         </div>
       </div>
-      <div class="impact-row">
-        <div class="impact-box"><span class="impact-num">~20</span><span class="impact-desc">Content pieces reviewed daily</span></div>
-        <div class="impact-box"><span class="impact-num">15–17</span><span class="impact-desc">Account cases per day</span></div>
-        <div class="impact-box"><span class="impact-num">2–4</span><span class="impact-desc">Accounts restored daily</span></div>
+      <div class="metric-list">
+        <div class="metric-item"><div class="metric-dot"></div> ~20 Content pieces reviewed daily</div>
+        <div class="metric-item"><div class="metric-dot"></div> 15–17 Account cases per day</div>
+        <div class="metric-item"><div class="metric-dot"></div> 2–4 Accounts restored daily</div>
       </div>
       <ul class="exp-bullets">
         <li>Reviews user-generated content daily — posts, images, videos, and comments — flagging violations including nudity, harassment, and impersonation</li>
         <li>Investigates account-level cases covering compromised accounts, content takedowns, and false user reports</li>
-        <li>Collaborates with Policy, Trust & Safety, and QA teams to resolve complex escalations and maintain platform integrity</li>
+        <li>Collaborates with Policy, Trust & Safety, and QA teams to resolve complex validations and maintain platform integrity</li>
       </ul>
     </div>
+    
+    <!-- Tech Mahindra -->
     <div class="exp-card">
       <div class="exp-header">
         <div>
           <div class="exp-company">Tech Mahindra · Google Project</div>
-          <div class="exp-role">Senior Associate, Document Verification</div>
+          <div class="exp-role">Senior Associate <span style="color:var(--muted); font-size:14px; font-weight:normal;">(Promoted from Associate)</span></div>
         </div>
         <div>
           <div class="exp-period">Dec 2019 – Jun 2024</div>
           <div class="exp-location">Hyderabad, India</div>
         </div>
       </div>
-      <div class="impact-row">
-        <div class="impact-box"><span class="impact-num">110–120</span><span class="impact-desc">IDs verified per day</span></div>
-        <div class="impact-box"><span class="impact-num">98%+</span><span class="impact-desc">Accuracy maintained</span></div>
-        <div class="impact-box"><span class="impact-num">200+</span><span class="impact-desc">Reviewers used my playbook</span></div>
+      <div class="metric-list">
+        <div class="metric-item"><div class="metric-dot"></div> 110–120 IDs verified per day</div>
+        <div class="metric-item"><div class="metric-dot"></div> 98%+ Accuracy maintained</div>
+        <div class="metric-item"><div class="metric-dot"></div> 200+ Reviewers used my playbook</div>
       </div>
       <ul class="exp-bullets">
         <li>Verified passports, licences, and national IDs daily to determine age eligibility across Google platforms in a 120–150 member team</li>
@@ -348,6 +339,26 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
         <li>Mentored 5–6 new joiners; annotated data in Gujarati and English to train Google AI language models</li>
       </ul>
     </div>
+
+    <!-- ACME Consulting -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div>
+          <div class="exp-company">ACME Consulting</div>
+          <div class="exp-role">Admin Support Executive <span style="color:var(--muted); font-size:14px; font-weight:normal;">(Part-time)</span></div>
+        </div>
+        <div>
+          <div class="exp-period">Oct 2018 – Apr 2019</div>
+          <div class="exp-location">Hyderabad, India</div>
+        </div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Spearheaded daily recruitment outreach by initiating ~30 targeted calls, securing candidate interest, and coordinating interviews that directly enabled timely onboarding for critical roles during the firm's growth phase.</li>
+        <li>Created and delivered 15+ engaging visual assets (posters, reels, and animated videos) using Canva and animation tools to support marketing campaigns and internal branding initiatives.</li>
+        <li>Drove a 20% increase in client visibility by executing tailored content strategies across social media platforms, effectively elevating the firm’s brand presence and audience engagement.</li>
+      </ul>
+    </div>
+
   </div>
 </div>
 </div>
@@ -355,7 +366,7 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
 <!-- SKILLS -->
 <div style="background:linear-gradient(180deg,#16213E,#1A1A2E)">
 <div class="section">
-  <p class="sec-label">✦ What I Bring</p>
+  <p class="sec-label">✦ Tactical Toolkit</p>
   <h2 class="sec-title">Skills</h2>
   <div class="skills-layout">
     <div>
@@ -374,6 +385,8 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
         <span class="skill-tag">Process Documentation</span>
         <span class="skill-tag">Quality Assurance</span>
       </div>
+    </div>
+    <div>
       <div class="skills-group-title">Tools & Platforms</div>
       <div class="skill-tags">
         <span class="skill-tag">MS Excel (Advanced)</span>
@@ -383,14 +396,17 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
         <span class="skill-tag">Internal CMS / Moderation Tools</span>
       </div>
     </div>
+  </div>
+</div>
+</div>
+
+<!-- SEPARATED INDUSTRY KNOWLEDGE & LANGUAGES -->
+<div style="background:linear-gradient(180deg,#1A1A2E,#16213E)">
+<div class="section">
+  <div class="grid-two-col">
     <div>
-      <div class="skills-group-title">Languages</div>
-      <div class="skill-tags">
-        <span class="skill-tag">English — Fluent</span>
-        <span class="skill-tag">Gujarati — Native</span>
-        <span class="skill-tag">Hindi — Fluent</span>
-      </div>
-      <div class="skills-group-title">Industry Knowledge</div>
+      <p class="sec-label">✦ Domain Expertise</p>
+      <h2 class="sec-title">Industry Knowledge</h2>
       <div class="skill-tags">
         <span class="skill-tag">AML Compliance</span>
         <span class="skill-tag">Document Forensics</span>
@@ -400,37 +416,50 @@ body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--text)
         <span class="skill-tag">Cross-functional Collaboration</span>
       </div>
     </div>
+    <div>
+      <p class="sec-label">✦ Communication</p>
+      <h2 class="sec-title">Languages</h2>
+      <div class="skill-tags">
+        <span class="skill-tag" style="border-color: var(--emerald); color: var(--emerald);">English — Fluent</span>
+        <span class="skill-tag" style="border-color: var(--emerald); color: var(--emerald);">Gujarati — Native</span>
+        <span class="skill-tag" style="border-color: var(--emerald); color: var(--emerald);">Hindi — Fluent</span>
+      </div>
+    </div>
   </div>
 </div>
 </div>
 
-<!-- EDUCATION -->
-<div style="background:linear-gradient(180deg,#1A1A2E,#16213E)">
+<!-- SEPARATED EDUCATION & CERTIFICATIONS -->
+<div style="background:linear-gradient(180deg,#16213E,#1A1A2E)">
 <div class="section">
-  <p class="sec-label">✦ Academic Background</p>
-  <h2 class="sec-title">Education & Certifications</h2>
-  <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-degree">Bachelor of Commerce</div>
-      <div class="edu-school">Osmania University, Hyderabad</div>
-      <div class="edu-year">2020 – 2023</div>
+  <div class="grid-two-col">
+    
+    <!-- Education Section -->
+    <div>
+      <p class="sec-label">✦ Foundations</p>
+      <h2 class="sec-title">Education</h2>
+      <div class="edu-list">
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Commerce (B.Com)</div>
+          <div class="edu-school">Osmania University, Hyderabad</div>
+          <div class="edu-year">2020 – 2023 <span style="color:var(--muted); font-weight:normal; font-size:12px; margin-left:6px;">(Part-time, Distance Learning)</span></div>
+        </div>
+      </div>
     </div>
-    <div class="edu-card">
-      <div class="edu-icon">💼</div>
-      <div class="edu-degree">Data Analytics Simulation</div>
-      <div class="edu-school">Deloitte · Forage</div>
-      <div class="edu-year">Virtual Job Simulation</div>
+    
+    <!-- Certifications Section -->
+    <div>
+      <p class="sec-label">✦ Validations</p>
+      <h2 class="sec-title">Certifications</h2>
+      <div class="cert-list-vertical">
+        <div class="cert-card-v"><div class="cert-dot"></div><div><div class="cert-name">Data Analytics Simulation</div><div class="cert-issuer">Deloitte (Forage)</div></div></div>
+        <div class="cert-card-v"><div class="cert-dot"></div><div><div class="cert-name">Introduction to AI</div><div class="cert-issuer">Google</div></div></div>
+        <div class="cert-card-v"><div class="cert-dot"></div><div><div class="cert-name">Data-Driven Decisions</div><div class="cert-issuer">Google</div></div></div>
+        <div class="cert-card-v"><div class="cert-dot"></div><div><div class="cert-name">AI Foundations: Machine Learning</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
+        <div class="cert-card-v"><div class="cert-dot"></div><div><div class="cert-name">Digital Marketing & E-commerce</div><div class="cert-issuer">Google</div></div></div>
+      </div>
     </div>
-  </div>
-  <div class="skills-group-title" style="margin-bottom:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--emerald);padding-bottom:8px;border-bottom:1px solid rgba(0,200,150,0.15)">Certifications</div>
-  <div class="cert-grid">
-    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Introduction to AI</div><div class="cert-issuer">Google</div></div></div>
-    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Foundations: Data, Data Everywhere</div><div class="cert-issuer">Google</div></div></div>
-    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Data-Driven Decisions</div><div class="cert-issuer">Google</div></div></div>
-    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Digital Marketing & E-commerce</div><div class="cert-issuer">Google</div></div></div>
-    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">AI Foundations: Machine Learning</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
-    <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Data Analytics Simulation</div><div class="cert-issuer">Deloitte (Forage)</div></div></div>
+
   </div>
 </div>
 </div>
